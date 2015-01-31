@@ -37,10 +37,10 @@ public class ProxyConfig {
     protected Boolean directBuffers;
     @JsonProperty("target-url")
     protected String targetUrl;
-    @JsonProperty("send-access-token")
-    protected boolean sendAccessToken;
     @JsonProperty("applications")
     protected List<Application> applications = new LinkedList<Application>();
+    @JsonProperty("identity-header-names")
+    protected IdentityHeaderNames identityHeaderNames;
 
     public String getBindAddress() {
         return bindAddress;
@@ -146,12 +146,12 @@ public class ProxyConfig {
         this.applications = applications;
     }
 
-    public boolean isSendAccessToken() {
-        return sendAccessToken;
+    public IdentityHeaderNames getIdentityHeaderNames() {
+        return identityHeaderNames;
     }
 
-    public void setSendAccessToken(boolean sendAccessToken) {
-        this.sendAccessToken = sendAccessToken;
+    public void setIdentityHeaderNames(IdentityHeaderNames identityHeaderNames) {
+        this.identityHeaderNames = identityHeaderNames;
     }
 
     public static class Application {
@@ -194,6 +194,59 @@ public class ProxyConfig {
 
         public void setConstraints(List<Constraint> constraints) {
             this.constraints = constraints;
+        }
+    }
+
+    public static class IdentityHeaderNames {
+        @JsonProperty("subject")
+        protected String subject;
+        @JsonProperty("userName")
+        protected String userName;
+        @JsonProperty("email")
+        protected String email;
+        @JsonProperty("name")
+        protected String name;
+        @JsonProperty("accessToken")
+        protected String accessToken;
+
+        public String getSubject() {
+            return subject;
+        }
+
+        public void setSubject(String subject) {
+            this.subject = subject;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getAccessToken() {
+            return accessToken;
+        }
+
+        public void setAccessToken(String accessToken) {
+            this.accessToken = accessToken;
         }
     }
 

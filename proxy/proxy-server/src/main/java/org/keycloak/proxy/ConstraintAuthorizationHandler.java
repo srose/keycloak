@@ -12,20 +12,40 @@ import org.keycloak.representations.IDToken;
  * @version $Revision: 1 $
  */
 public class ConstraintAuthorizationHandler implements HttpHandler {
-    public static final HttpString KEYCLOAK_SUBJECT = new HttpString("KEYCLOAK_SUBJECT");
-    public static final HttpString KEYCLOAK_USERNAME = new HttpString("KEYCLOAK_USERNAME");
-    public static final HttpString KEYCLOAK_EMAIL = new HttpString("KEYCLOAK_EMAIL");
-    public static final HttpString KEYCLOAK_NAME = new HttpString("KEYCLOAK_NAME");
-    public static final HttpString KEYCLOAK_ACCESS_TOKEN = new HttpString("KEYCLOAK_ACCESS_TOKEN");
 
     protected HttpHandler next;
     protected String errorPage;
-    protected boolean sendAccessToken;
+    protected ProxyConfig.IdentityHeaderNames identityHeaderNames;
 
-    public ConstraintAuthorizationHandler(HttpHandler next, String errorPage, boolean sendAccessToken) {
+    protected final HttpString httpHeaderSubject;
+    protected final HttpString httpHeaderUserName;
+    protected final HttpString httpHeaderEmail;
+    protected final HttpString httpHeaderName;
+    protected final HttpString httpHeaderAccessToken;
+
+    public ConstraintAuthorizationHandler(HttpHandler next, String errorPage, ProxyConfig.IdentityHeaderNames identityHeaderNames) {
         this.next = next;
         this.errorPage = errorPage;
-        this.sendAccessToken = sendAccessToken;
+        if(identityHeaderNames != null) {
+            this.httpHeaderSubject = getHttpStringOrNull(identityHeaderNames.getSubject());
+            this.httpHeaderUserName = getHttpStringOrNull(identityHeaderNames.getUserName());
+            this.httpHeaderEmail = getHttpStringOrNull(identityHeaderNames.getEmail());
+            this.httpHeaderName = getHttpStringOrNull(identityHeaderNames.getName());
+            this.httpHeaderAccessToken = getHttpStringOrNull(identityHeaderNames.getAccessToken());
+        } else {
+            this.httpHeaderSubject = null;
+            this.httpHeaderUserName = null;
+            this.httpHeaderEmail = null;
+            this.httpHeaderName = null;
+            this.httpHeaderAccessToken = null;
+        }
+    }
+
+    private HttpString getHttpStringOrNull(String string) {
+        if(string == null) {
+            return null;
+        }
+        return new HttpString(string);
     }
 
     @Override
@@ -61,23 +81,23 @@ public class ConstraintAuthorizationHandler implements HttpHandler {
         if (account != null) {
             IDToken idToken = account.getKeycloakSecurityContext().getToken();
             if (idToken == null) return;
-            if (idToken.getSubject() != null) {
-                exchange.getRequestHeaders().put(KEYCLOAK_SUBJECT, idToken.getSubject());
+            if (idToken.getSubject() != null && httpHeaderSubject != null) {
+                exchange.getRequestHeaders().put(httpHeaderSubject, idToken.getSubject());
             }
 
             UserClaimSet claimSet = idToken.getUserClaimSet();
 
-            if (claimSet.getPreferredUsername() != null) {
-                exchange.getRequestHeaders().put(KEYCLOAK_USERNAME, claimSet.getPreferredUsername());
+            if (claimSet.getPreferredUsername() != null && httpHeaderUserName != null) {
+                exchange.getRequestHeaders().put(httpHeaderUserName, claimSet.getPreferredUsername());
             }
-            if (claimSet.getEmail() != null) {
-                exchange.getRequestHeaders().put(KEYCLOAK_EMAIL, claimSet.getEmail());
+            if (claimSet.getEmail() != null && httpHeaderEmail != null) {
+                exchange.getRequestHeaders().put(httpHeaderEmail, claimSet.getEmail());
             }
-            if (claimSet.getName() != null) {
-                exchange.getRequestHeaders().put(KEYCLOAK_NAME, claimSet.getName());
+            if (claimSet.getName() != null && httpHeaderName != null) {
+                exchange.getRequestHeaders().put(httpHeaderName, claimSet.getName());
             }
-            if (sendAccessToken) {
-                exchange.getRequestHeaders().put(KEYCLOAK_ACCESS_TOKEN, account.getKeycloakSecurityContext().getTokenString());
+            if (httpHeaderAccessToken != null) {
+                exchange.getRequestHeaders().put(httpHeaderAccessToken, account.getKeycloakSecurityContext().getTokenString());
             }
         }
         next.handleRequest(exchange);

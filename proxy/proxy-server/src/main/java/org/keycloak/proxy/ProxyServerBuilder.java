@@ -76,7 +76,7 @@ public class ProxyServerBuilder {
 
     protected PathHandler root = new PathHandler(NOT_FOUND);
     protected HttpHandler proxyHandler;
-    protected boolean sendAccessToken;
+    protected ProxyConfig.IdentityHeaderNames identityHeaderNames;
 
     public ProxyServerBuilder target(String uri) {
         SimpleProxyClientProvider provider = null;
@@ -96,8 +96,8 @@ public class ProxyServerBuilder {
         return this;
     }
 
-    public ProxyServerBuilder sendAccessToken(boolean flag) {
-        this.sendAccessToken = flag;
+    public ProxyServerBuilder identityHeaderNames(ProxyConfig.IdentityHeaderNames identityHeaderNames) {
+        this.identityHeaderNames = identityHeaderNames;
         return this;
     }
     public ApplicationBuilder application(AdapterConfig config) {
@@ -224,7 +224,7 @@ public class ProxyServerBuilder {
                     errorPage = base + "/" + errorPage;
                 }
             }
-            handler = new ConstraintAuthorizationHandler(handler, errorPage, sendAccessToken);
+            handler = new ConstraintAuthorizationHandler(handler, errorPage, identityHeaderNames);
             handler = new ProxyAuthenticationCallHandler(handler);
             handler = new ConstraintMatcherHandler(matches, handler, toWrap, errorPage);
             final List<AuthenticationMechanism> mechanisms = new LinkedList<AuthenticationMechanism>();
@@ -384,7 +384,7 @@ public class ProxyServerBuilder {
     }
 
     public static void initOptions(ProxyConfig config, ProxyServerBuilder builder) {
-        builder.sendAccessToken(config.isSendAccessToken());
+        builder.identityHeaderNames(config.getIdentityHeaderNames());
         if (config.getBufferSize() != null) builder.setBufferSize(config.getBufferSize());
         if (config.getBuffersPerRegion() != null) builder.setBuffersPerRegion(config.getBuffersPerRegion());
         if (config.getIoThreads() != null) builder.setIoThreads(config.getIoThreads());
