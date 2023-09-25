@@ -236,8 +236,8 @@ importers:
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
       '@types/dagre':
-        specifier: ^0.7.48
-        version: 0.7.48
+        specifier: ^0.7.50
+        version: 0.7.50
       '@types/file-saver':
         specifier: ^2.0.5
         version: 2.0.5
@@ -1824,8 +1824,8 @@ packages:
       '@types/d3-zoom': 3.0.3
     dev: false
 
-  /@types/dagre@0.7.48:
-    resolution: {integrity: sha512-rF3yXSwHIrDxEkN6edCE4TXknb5YSEpiXfLaspw1I08grC49ZFuAVGOQCmZGIuLUGoFgcqGlUFBL/XrpgYpQgw==}
+  /@types/dagre@0.7.50:
+    resolution: {integrity: sha512-3HxPUil6GwbcO+q3WxZhM6XMSXYaiXjjzKUDYsGk2tqP5Ko2WpN71I8g1kXLgX5nUkKg00+LlCTuaverWVADGA==}
     dev: true
 
   /@types/estree@1.0.1:
