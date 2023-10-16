@@ -361,8 +361,8 @@ importers:
         specifier: ^25.0.3
         version: 25.0.3(rollup@3.26.3)
       '@rollup/plugin-inject':
-        specifier: ^5.0.3
-        version: 5.0.3(rollup@3.26.3)
+        specifier: ^5.0.5
+        version: 5.0.5(rollup@3.26.3)
       '@rollup/plugin-node-resolve':
         specifier: ^15.1.0
         version: 15.1.0(rollup@3.26.3)
@@ -1305,18 +1305,18 @@ packages:
       rollup: 3.26.3
     dev: true
 
-  /@rollup/plugin-inject@5.0.3(rollup@3.26.3):
-    resolution: {integrity: sha512-411QlbL+z2yXpRWFXSmw/teQRMkXcAAC8aYTemc15gwJRpvEVDQwoe+N/HTFD8RFG8+88Bme9DK2V9CVm7hJdA==}
+  /@rollup/plugin-inject@5.0.5(rollup@3.26.3):
+    resolution: {integrity: sha512-2+DEJbNBoPROPkgTDNe8/1YXWcqxbN5DTjASVIOx8HS+pITXushyNiBV56RB08zuptzz8gT3YfkqriTBVycepg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
     dependencies:
       '@rollup/pluginutils': 5.0.2(rollup@3.26.3)
       estree-walker: 2.0.2
-      magic-string: 0.27.0
+      magic-string: 0.30.5
       rollup: 3.26.3
     dev: true
 
@@ -2144,7 +2144,7 @@ packages:
   /@vitest/snapshot@0.33.0:
     resolution: {integrity: sha512-tJjrl//qAHbyHajpFvr8Wsk8DIOODEebTu7pgBrP07iOepR5jYkLFiqLq2Ltxv+r0uptUb4izv1J8XBOwKkVYA==}
     dependencies:
-      magic-string: 0.30.1
+      magic-string: 0.30.5
       pathe: 1.1.1
       pretty-format: 29.6.1
     dev: true
@@ -5021,6 +5021,13 @@ packages:
 
   /magic-string@0.30.1:
     resolution: {integrity: sha512-mbVKXPmS0z0G4XqFDCTllmDQ6coZzn94aMlb0o/A4HEHJCKcanlDZwYJgwnkmgD3jyWhUgj9VsPrfd972yPffA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
+  /magic-string@0.30.5:
+    resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
