@@ -181,8 +181,8 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       file-selector:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.9.0
+        version: 0.9.0
       flat:
         specifier: ^6.0.1
         version: 6.0.1
@@ -3027,6 +3027,10 @@ packages:
     resolution: {integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==}
     engines: {node: '>= 12'}
 
+  file-selector@0.9.0:
+    resolution: {integrity: sha512-qItA+lsPIzIG5yVWkgN8eqYq+Uo9jW+TqbeAqM/uoNe0OxCKch5IwGUMfluIAC+Wk1jRkiqELe3mUpvqAezR9Q==}
+    engines: {node: '>= 12'}
+
   filing-cabinet@4.2.0:
     resolution: {integrity: sha512-YZ21ryzRcyqxpyKggdYSoXx//d3sCJzM3lsYoaeg/FyXdADGJrUl+BW1KIglaVLJN5BBcMtWylkygY8zBp2MrQ==}
     engines: {node: '>=14'}
@@ -5740,7 +5744,7 @@ snapshots:
       '@patternfly/react-table': 5.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       dagre: 0.8.5
       file-saver: 2.0.5
-      file-selector: 0.6.0
+      file-selector: 0.9.0
       flat: 6.0.1
       i18next: 23.13.0
       i18next-http-backend: 2.5.2
@@ -7954,7 +7958,11 @@ snapshots:
 
   file-selector@0.6.0:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
+
+  file-selector@0.9.0:
+    dependencies:
+      tslib: 2.6.3
 
   filing-cabinet@4.2.0:
     dependencies:
