@@ -39,6 +39,10 @@ public class KeycloakUrls {
         return toUrl(getAdmin());
     }
 
+    public KeycloakUriBuilder getBaseBuilder() {
+        return toBuilder(getBase());
+    }
+
     public KeycloakUriBuilder getAdminBuilder() {
         return toBuilder(getAdmin());
     }
