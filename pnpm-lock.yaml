@@ -81,8 +81,8 @@ importers:
         specifier: ^5.4.1
         version: 5.4.1
       '@patternfly/react-core':
-        specifier: ^5.4.10
-        version: 5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.4.12
+        version: 5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-icons':
         specifier: ^5.4.2
         version: 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -163,8 +163,8 @@ importers:
         specifier: ^5.4.13
         version: 5.4.13(monaco-editor@0.52.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-core':
-        specifier: ^5.4.10
-        version: 5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.4.12
+        version: 5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-icons':
         specifier: ^5.4.2
         version: 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -383,8 +383,8 @@ importers:
         specifier: workspace:*
         version: link:../keycloak-admin-client
       '@patternfly/react-core':
-        specifier: ^5.4.10
-        version: 5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.4.12
+        version: 5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-icons':
         specifier: ^5.4.2
         version: 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1209,8 +1209,8 @@ packages:
       react: ^17 || ^18
       react-dom: ^17 || ^18
 
-  '@patternfly/react-core@5.4.10':
-    resolution: {integrity: sha512-lThdXKqHc9sN5AqPskZa1YmUmSwbjdkaT8neTCdMjfnBaBanYCmSCNUMYUsoB0L/2siu2Vlcp12RRaG5hZeN2g==}
+  '@patternfly/react-core@5.4.12':
+    resolution: {integrity: sha512-RI1xS1JGJdE/FvpkMzawaE21oeTc/e+WbxvFXqZfLhTz60P8RzVG1nYWXDL747Onkz3SYtY79PhQ8nsLeO5sJQ==}
     peerDependencies:
       react: ^17 || ^18
       react-dom: ^17 || ^18
@@ -5674,7 +5674,7 @@ snapshots:
       '@keycloak/keycloak-ui-shared': link:js/libs/ui-shared
       '@patternfly/patternfly': 5.4.1
       '@patternfly/react-code-editor': 5.4.13(monaco-editor@0.52.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@patternfly/react-core': 5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@patternfly/react-core': 5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-icons': 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-styles': 5.4.1
       '@patternfly/react-table': 5.4.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5838,7 +5838,7 @@ snapshots:
   '@patternfly/react-code-editor@5.4.13(monaco-editor@0.52.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@monaco-editor/react': 4.6.0(monaco-editor@0.52.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@patternfly/react-core': 5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@patternfly/react-core': 5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-icons': 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-styles': 5.4.1
       react: 18.3.1
@@ -5848,7 +5848,7 @@ snapshots:
     transitivePeerDependencies:
       - monaco-editor
 
-  '@patternfly/react-core@5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@patternfly/react-core@5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@patternfly/react-icons': 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-styles': 5.4.1
@@ -5868,7 +5868,7 @@ snapshots:
 
   '@patternfly/react-table@5.4.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@patternfly/react-core': 5.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@patternfly/react-core': 5.4.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-icons': 5.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@patternfly/react-styles': 5.4.1
       '@patternfly/react-tokens': 5.4.1
